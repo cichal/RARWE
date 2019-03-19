@@ -21,12 +21,12 @@
 }
 
 .rr-navbar-item > a:hover {
-  border-bottom: 2px sp;od var (--navitem-link-color);
+  border-bottom: 2px solid var(--navitem-link-color);
 }
 
 .rr-navbar-item > a.active {
   color: inherit;
-  border-bottom: 2px solid var (--navitem-link-color);
+  border-bottom: 2px solid var(--navitem-link-color);
 }
 
 .rr-navbar-item + .rr-navbar-item {
@@ -77,4 +77,35 @@ a {
 
 .list > li {
   margin-bottom: 10px;
+}
+
+.rr-sidebar {
+  float: left;
+  width: calc( 100% / 3);
+}
+
+.rr-main-panel {
+  float: left;
+  width: calc( 100% / 1.5);
+}
+
+.rr-list {
+  list-style-type: none;
+}
+
+.rr-list-item {
+  margin-bottom: 10px;
+}
+
+.rr-empty-message {
+  text-align: center;
+}
+
+.rr-band-link > .rr-pointer {
+  margin-left: 5px;
+  display: none;
+}
+
+.rr-band-link.active > .rr-pointer {
+  display: inline-block;
 }
