@@ -1,19 +1,21 @@
 import Route from '@ember/routing/route';
 import { A } from '@ember/array';
-import EmberObject, { computed } from '@ember/object'; 
+import EmberObject, { computed } from '@ember/object';
 import { dasherize } from '@ember/string';
 
 let Band = EmberObject.extend({
    name: '',
    language: '',
-   
-   slug: computed('name', function() { 
-     console.log('Recomputing slug');
+
+// !!!!Logging for slug computing, this was to test when bands was compiled?
+
+   slug: computed('name', function() {
+     //console.log('Recomputing slug');
      return dasherize(this.name);
   }),
-  
-  site: computed('slug', 'language', function() { 
-    console.log('Recomputing site');
+
+  site: computed('slug', 'language', function() {
+  //  console.log('Recomputing site');
     return `https://bands.com/${this.slug}.${this.language}`;
   })
 });
@@ -21,7 +23,7 @@ let Band = EmberObject.extend({
 let Song = EmberObject.extend({
    title: '',
    rating: 0,
-   band: '' 
+   band: ''
 });
 
 export default Route.extend({
@@ -47,9 +49,9 @@ export default Route.extend({
     let daughter = Song.create({
       title: 'Daughter',
       band: 'Pearl Jam',
-      rating: 5 
+      rating: 5
     });
-    
+
     let ledZeppelin = Band.create({ name: 'Led Zeppelin', songs:
 A([blackDog]) });
     let pearlJam = Band.create({ name: 'Pearl Jam', songs:
@@ -57,6 +59,6 @@ A([yellowLedbetter, daughter]) });
     let fooFighters = Band.create({ name: 'Foo Fighters', songs:
 A([pretender]) });
 
-    return A([ledZeppelin, pearlJam, fooFighters]); 
+    return A([ledZeppelin, pearlJam, fooFighters]);
   }
 });
