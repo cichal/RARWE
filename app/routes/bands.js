@@ -1,30 +1,7 @@
 import Route from '@ember/routing/route';
 import { A } from '@ember/array';
-import EmberObject, { computed } from '@ember/object';
-import { dasherize } from '@ember/string';
-
-let Band = EmberObject.extend({
-   name: '',
-   language: '',
-
-// !!!!Logging for slug computing, this was to test when bands was compiled?
-
-   slug: computed('name', function() {
-     //console.log('Recomputing slug');
-     return dasherize(this.name);
-  }),
-
-  site: computed('slug', 'language', function() {
-  //  console.log('Recomputing site');
-    return `https://bands.com/${this.slug}.${this.language}`;
-  })
-});
-
-let Song = EmberObject.extend({
-   title: '',
-   rating: 0,
-   band: ''
-});
+import Band from 'rarwe/models/band';
+import Song from 'rarwe/models/song';
 
 export default Route.extend({
   model() {
