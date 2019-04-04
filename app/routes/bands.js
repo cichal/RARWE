@@ -29,12 +29,19 @@ export default Route.extend({
       rating: 5
     });
 
-    let ledZeppelin = Band.create({ name: 'Led Zeppelin', songs:
-A([blackDog]) });
-    let pearlJam = Band.create({ name: 'Pearl Jam', songs:
-A([yellowLedbetter, daughter]) });
-    let fooFighters = Band.create({ name: 'Foo Fighters', songs:
-A([pretender]) });
+    let ledZeppelin = Band.create({
+      name: 'Led Zeppelin',
+      songs: A([blackDog])
+    });
+    let pearlJam = Band.create({
+      name: 'Pearl Jam',
+      description: 'Pearl Jam sounds like gringing up pearls and spreading it on toast.',
+      songs: A([yellowLedbetter, daughter])
+    });
+    let fooFighters = Band.create({
+      name: 'Foo Fighters',
+      songs: A([pretender])
+    });
 
     return A([ledZeppelin, pearlJam, fooFighters]);
   }
