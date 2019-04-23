@@ -29,13 +29,15 @@ export default Route.extend({
       rating: 5
     });
 
+      //songs go above this line and artists go below for the demo.
+
     let ledZeppelin = Band.create({
       name: 'Led Zeppelin',
       songs: A([blackDog])
     });
     let pearlJam = Band.create({
       name: 'Pearl Jam',
-      description: 'Pearl Jam sounds like gringing up pearls and spreading it on toast.',
+      description: 'Pearl Jam is an American rock band, formed in Seattle, Washington in 1990.',
       songs: A([yellowLedbetter, daughter])
     });
     let fooFighters = Band.create({
