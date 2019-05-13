@@ -1,14 +1,14 @@
 <div class="rr-sidebar">
   <ul class="rr-list">
     {{#each model as |band|}}
-      <li class="rr-list-item">
-        {{#link-to "bands.band" band class="rr-band-link"}}
-          {{band.name}}
-          <span class="rr-pointer">
-            {{fa-icon "angle-right"}}
-          </span>
-        {{/link-to}}
-      </li>
+    <li class="rr-list-item">
+      {{#link-to "bands.band" band.slug class="rr-band-link"}}
+      {{band.name}}
+      <span class="rr-pointer">
+        {{fa-icon "angle-right"}}
+      </span>
+      {{/link-to}}
+    </li>
     {{/each}}
   </ul>
   <div class="rr-new-label">
@@ -19,10 +19,10 @@
       <span class="rr-cancel-icon" onclick={{action "cancelAddBand"}}>{{fa-icon "times"}}</span>
     </form>
     {{else}}
-      <label onclick={{action "addBand"}}>
-        {{fa-icon "plus"}}
-        <span class="ml1">Add new band</span>
-      </label>
+    <label onclick={{action "addBand"}}>
+      {{fa-icon "plus"}}
+      <span class="ml1">Add new band</span>
+    </label>
     {{/if}}
   </div>
 </div>
