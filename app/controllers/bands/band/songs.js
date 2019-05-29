@@ -18,6 +18,7 @@ export default Controller.extend({
 
     async saveSong(event) {
       event.preventDefault();
+      // eslint-disable-next-line no-unused-vars
       let newSong = this.get('store').createRecord('song', {
         title: this.get('newSongTitle'),
         band: this.model
