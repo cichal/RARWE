@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit } from '@ember/test-helpers';
+import { visit, pauseTest } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import setupMirageTest from 'ember-cli-mirage/test-support/setup-mirage';
 import { createBand } from 'rarwe/tests/helpers/custom-helpers';
@@ -25,6 +25,7 @@ module('Acceptance | Bands', function(hooks) {
     
      await visit('/');
      await createBand('Caspian');
+     //await pauseTest();
     
      assert.dom('[data-test-rr=band-list-item]').exists({ count: 2 },
      'A new band link is rendered');
